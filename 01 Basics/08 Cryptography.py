@@ -1,0 +1,25 @@
+# encrypting
+from cryptography.fernet import Fernet
+
+string = '''
+
+Sample
+
+'''
+
+message = string.encode()
+
+f = Fernet(key)
+encrypted = f.encrypt(message)
+
+print(encrypted)
+
+
+
+# decrypting
+from cryptography.fernet import Fernet
+encrypted = b'gAAAAABjAflvKfptj-LJLFFmpDNVZLM6Ybox_IZsClaomu27_HilAELKSYcgQh36HGF7uFcan8rVxXxyey6YMf0spM0kloMjnzbJ6U3GUKeQiJNG-AHgCVkcPm2YVIOmPb9ZwnWpYocLKKh_IlibJ5QUiVfSxgWFGPpB5P7i6vFyLHMZhYpvL2haepw-Ud2XLFNUgtVWEP6vtXpag93RIuzmTFyS3y0iAlD4Zhn3DuJ0zNMgaJrTZDSpexTV1_je9qD_X5bvoX20v-FmVFAACevOhHbPG6lMAtszdU1Hvq8n3QvzfwmE6U0d89qCAjidFhZP00bEGxObWRtDL2kpFUd-IrKMPqeAFGM3F4_lrpdzoWr_h4nTuOB5Bk-xTJ6hoAJCjlimvFqvLTYLUs2cHZGt6t9Kd_9agcnxm85MeBjo8cg1Ks27ehgdHa7R93t0BhHdEHjM6T0B85fHY6J4a9ukdVDYUMIN1xuYfhApxSUlKKvqJ3aGnZRWr6DGxcY-pOoCVb5FcP3elhYma8pp6AkxFypvSgNf8H8okD9_Ctystk1DYb5F9Zbzc0cNLt7zP8eUJETIR6pNmJGtDCkTcmba9WXeFu9ZeuVaQzoI-drdsscRBC3xsVK4ai8dtlStGq18Z49emzMS'
+
+f = Fernet(b'08ubKSyKnZ8E0aoUMRnyI1I6TLrEc9JIjlhixg73Ies=')
+decrypted = f.decrypt(encrypted)
+print(decrypted.decode())
