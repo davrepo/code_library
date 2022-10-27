@@ -72,6 +72,20 @@ with open(name, mode='r') as fh:
         words = line.split()
         print(words[2])
 
+# ------------------ Read file a chunck at a time ---------------------------------------------
+
+def chunckRead():
+    with open('accounts.txt', mode='r') as f:
+        size_to_read = 10
+        f_contents = f.read(size_to_read)
+        while len(f_contents) > 0:
+            print(f_contents, end='*')
+            f_contents = f.read(size_to_read)
+
+def chunkReader():
+    with open('accounts.txt', mode='rb') as f:
+        while (chunk := f.read(10)) != b'':   # := is walrus operator, assigns value to chunk and can use it
+            print(f'chunk: {chunk}')
 
 # ----------------- Exception ----------------------------------------------
 
