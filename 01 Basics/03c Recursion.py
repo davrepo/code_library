@@ -14,6 +14,18 @@ def fib_iter(idx):      # iteration
     
     return seq[-2]
 
+# DTU professor fibonnaci iteration algorithm
+def fib_iter2(n):
+    if n ==0 or n == 1:
+        return 1
+    val = 1
+    m = 1
+    prev = 1
+    while val != n:
+        val, prev = val + prev, val
+        m += 1
+    return val 
+
 
 def fib_recur(idx):     # recursion
     if idx <= 1:        # base case
@@ -23,6 +35,16 @@ def fib_recur(idx):     # recursion
 
 print(fib_iter(8))      #21
 print(fib_recur(8))     #21
+
+
+# Combination algorithm with recursion using formula C(n, k) = C(n-1, k-1) + C(n-1, k)
+def combination_recursive(n, k):
+    if k == 0:    # when k = 0, there is only 1 combination
+        return 1
+    if k > n or k < 0:     # when k is greater than n, there is no combination
+        return 0
+    else:
+        return combination_recursive(n-1, k) + combination_recursive(n-1, k-1)
 
 
 #Fibconacci with memoization / cache internal in class structure - cache is now an instance variable
@@ -45,6 +67,37 @@ class Fibonacci:
 fib_instance = Fibonacci()
 fib_instance(5)     #5
 fib_instance(8)     #21  - fibonacci number at index 8
+
+import time
+
+def time_wrapper(func):
+    def wrapper(*args, **kwargs):
+        t1 = time.time()
+        res = func(*args, **kwargs)
+        t2 = time.time()
+        return (f'{t2 - t1:.3f} secs'), res
+    return wrapper
+
+def fib(n):     # this is expensive to calculate
+    if n < 2:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+@ time_wrapper
+def memoization(n, memo={}):     # memo is a mutable default, stored in function object
+    try:
+        value = memo[n]
+    except KeyError:
+        value = fib(n)
+        memo[n] = value         # function call with unseen argument is stored in memo
+    return value
+
+memoization(35)     #('2.149 secs', 14930352)
+memoization(36)     #('3.689 secs', 24157817)
+memoization(36)     #('0.000 secs', 24157817)
+memoization(35)     #('0.000 secs', 14930352)
+
 
 # Factorial
 def factorial(num):

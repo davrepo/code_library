@@ -20,15 +20,10 @@ print(l)
 # unpacking a collection
 my_tuple = (1, 2, 3, 4, 5, 6, 7)
 i1, *i2, i3, i4 = my_tuple      # the middle part of the tuple gets unpacked into a list in i2
-print(i1)
-print(i2)
-print(i3)
-print(i4)
-# 1
-# [2, 3, 4, 5]
-# 6
-# 7
-
+print(i1)   # 1
+print(i2)   # [2, 3, 4, 5]
+print(i3)   # 6
+print(i4)   # 7
 
 # merge containers
 my_tuple = (1, 2, 3)
