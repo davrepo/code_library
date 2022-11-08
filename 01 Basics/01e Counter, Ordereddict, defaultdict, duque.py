@@ -2,7 +2,7 @@
 # Counter, namedtuple, defaultdict, deque
 # https://www.youtube.com/watch?v=HGOBQPFzWKo&list=WL&index=7
 # Counter, namedtuple, OrderedDict, defaultdict, deque
-
+# https://docs.python.org/3/library/collections.html 
 
 # ------------- Counter ------------------------------------------------------
 # frequency map the iterable object
@@ -21,7 +21,6 @@ print(list(my_counter.elements()))  #element() returns an itertool of all known 
 # Counter object has MANY functions... like update(), most_common()
 my_counter.update()
 my_counter.most_common()
-
 
 
 # ------------ deque -----------------------------------------------------------
