@@ -24,7 +24,7 @@ def fib_iter2(n):
     while val != n:
         val, prev = val + prev, val
         m += 1
-    return val 
+    return val
 
 
 def fib_recur(idx):     # recursion

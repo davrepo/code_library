@@ -1,8 +1,58 @@
-from math import comb
-from collections import Counter
 
+from collections import Counter
+from functools import lru_cache
+import concurrent.futures
+from itertools import chain
+
+@lru_cache(maxsize=None)
+def comb_recurs(n, k):
+    if k == 0 or k == n:
+        return 1
+    else:
+        return comb_recurs(n-1, k-1) + comb_recurs(n-1, k)
+
+# ------------------------------ Standard version ------------------------------
+@lru_cache(maxsize=None)
 def search_pascal_multiples_fast(row_limit):
-    return sorted(i for i, count in Counter(comb(n, k) for n in range(10, row_limit) for k in range(2, n//2+1)).items() if count > 1)
+    return sorted(i for i, count in Counter(comb_recurs(n, k) for n in range(10, row_limit) for k in range(2, n//2+1)).items() if count > 1)
+
+
+# ------------------------------ no Counter() overhead ------------------------------
+# @lru_cache(maxsize=None)
+# def search_pascal_multiples_fast(row_limit):
+#     seen = set()
+#     return sorted(set(x for x in (comb_recurs(n, k) for n in range(10, row_limit) for k in range(2, n//2+1)) if x in seen or seen.add(x)))
+
+
+# ------------------------------ Multithreading, faster if row > 300 ------------------------------
+# @lru_cache(maxsize=None)
+# def subthread(n):
+#     for k in range(2, n//2+1):
+#         yield comb_recurs(n,k)
+
+# @lru_cache(maxsize=None)
+# def search_pascal_multiples_fast(row_limit):
+#     with concurrent.futures.ThreadPoolExecutor() as executor:
+#         results = executor.map(subthread, range(10, row_limit))
+#         chained_result = chain.from_iterable(results)
+#         dupes = [i for i, count in Counter(chained_result).items() if count > 1]
+#         sorted_dupes = sorted(dupes)
+#         return sorted_dupes
+
+# ------------------------------ Multiprocessing, actually much slower ------------------------------
+# @lru_cache(maxsize=None)
+# def subthread(n):
+#     return [comb_recurs(n,k) for k in range(2, n//2+1)]
+
+# @lru_cache(maxsize=None)
+# def search_pascal_multiples_fast(row_limit):
+#     with concurrent.futures.ProcessPoolExecutor() as executor:
+#         results = executor.map(subthread, range(10, row_limit))
+#         chained_result = chain.from_iterable(results)
+#         dupes = [i for i, count in Counter(chained_result).items() if count > 1]
+#         sorted_dupes = sorted(dupes)
+#         return sorted_dupes
+
 
 #----------- DO NOT CHANGE ANYTHING BELOW THIS LINE
 
