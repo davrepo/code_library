@@ -1,0 +1,735 @@
+*{
+	font-family: arial;
+  }
+  
+  body{
+	  margin: 0;
+	  padding: 0;
+  }
+  
+  
+  
+  
+  /*Header Section Start*/
+  
+  
+  header{
+	  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  }
+  
+  .navbar{
+		  overflow: hidden;
+		  background-color: limegreen;
+	  }
+  
+  
+  
+  .navimg a{
+  
+		  float: left;
+		  display: block;
+		  cursor: default;	
+			padding: 10px 60px;
+  }
+  
+  .navitems a{
+  
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+  
+		text-align: center;
+		padding: 18px 20px;
+		text-decoration: none;
+		font-size: 17px;
+  
+  }
+  
+  
+  
+  
+  @media only screen and (max-width: 600px) {
+	.navitems a{
+	  display: none;
+	}
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  /*nav search box start */
+  
+  .navsearch form{
+  
+	   float: right;
+	   display: block;
+	   color: #f2f2f2;
+  
+		text-align: center;
+		padding: 13px 6vw;
+		text-decoration: none;
+		font-size: 17px;
+  
+  }
+  
+  
+  
+  form .searchbox{
+	  font-size: 20px;
+	  padding-top: 5px;
+	  background-color: transparent;
+	  border: 2px dotted ghostwhite;
+	  border-radius: 5px;
+	  letter-spacing: 4px;
+  
+  }
+  
+  input::placeholder{
+		  color: white;
+  }
+  
+  
+  form .btnicon{
+  
+		  padding: 1px 12px;
+		  background-color: transparent;
+		  border: 2px solid white;
+		  color: white;
+		  border-radius: 30px;
+		  
+		font-size: 24px;
+		transform: rotate(90deg);
+  
+  }
+  
+  .btnicon:hover{
+	  cursor: pointer;
+  }
+  
+  .btnicon:active{
+	  background-color: greenyellow;
+  
+  }
+  
+  
+  
+  @media only screen and (max-width: 1200px) {
+	.navsearch form{
+	  display: none;
+	}
+  }
+  
+  
+  /*nav search box end*/
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Nav Button Start*/
+  
+  .navbtn button{
+  
+		  display: none;
+		  background-color: transparent;
+		  border: transparent;
+		  color: white;
+		  text-align: center;
+		padding: 10px 20px;
+		font-size: 24px;
+		transform: rotate(90deg);
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+  
+  
+	.navbtn button{
+		float: right;
+	  display: block;
+  
+	  padding: 10px 40px;
+	  margin-right: 20px;
+	}
+  }
+  
+  
+   .sidebtn:hover{
+	  color: yellow;
+	  cursor: pointer;
+	  outline: none;
+  }
+  
+  
+  /*Nav Button End*/
+  
+  
+  
+  
+  
+  
+  /*Nav Side Bar Start*/
+  
+  
+  .navside {
+	  float: right;
+	   overflow: hidden;
+  
+	   border-bottom: 4px solid transparent;
+	   
+  }
+  
+  
+  .sidebtn{
+		  position: relative;
+		  z-index: 1;
+  }
+  
+  .sidemenu {
+	display: none;
+  
+	  height: 100vh;
+	position: absolute;
+	top: 44px;
+	right: 0;
+  
+	border-top: 20px solid white;
+  
+  
+	background-color: black;
+	opacity: .9;
+	padding: 16px;   
+  
+	z-index: 2;
+	
+  }
+  
+  .sidemenu a{
+  
+		  display: block;
+		  color:  ghostwhite;
+  
+  
+		text-align: left;
+		padding: 25px 36px;
+		text-decoration: none;
+		font-size: 17px;
+  
+  }
+  
+  
+  .navside:hover .sidemenu {
+	display: table;
+  }
+  
+  .sidemenu a:hover{
+	background-color: red;
+  }
+  
+  
+  
+  
+  .sidemenu:after{
+	  content: '';
+	  display: block;
+  }
+  
+  
+  /*Nav Side Bar End*/
+  
+  
+  /* header section end */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*main section start*/
+  
+  
+  /* Main Homesection start*/
+  
+  main .homesection{
+  
+	  height: 100vh;
+	  background: url(./img/bg01.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+  
+	padding: 0;
+	margin: 0;
+	  
+  }
+  
+  
+  .homesection .typebox{
+  
+	  display: flex;
+	justify-content: start;
+	align-items: center;
+  
+	padding: 70px;
+  }
+  
+  .autotype {
+	width: 26ch;
+	animation: typing 2s infinite,blink 3s infinite alternate;
+	animation-delay: 3s;
+  
+	white-space: nowrap;
+	overflow: hidden;
+  
+	border-right: 3px solid limegreen;
+	font-family: monospace;
+	font-size: 3em;
+	cursor: default;
+  
+	color: darkolivegreen;
+  
+  }
+  
+  
+  
+  @media only screen and (max-width: 600px) {
+	.autotype{
+			  font-size: 1.8em;
+	}
+  }
+  
+  
+  
+  
+  @keyframes typing{
+	from {
+	  width: 0
+	}
+  }
+	  
+  @keyframes blink{
+	50% {
+	  border-color: transparent
+	}
+  }
+  
+  
+  
+  
+  
+  .textbox{
+  
+		  position: relative;
+  }
+  
+  
+  article{
+  
+	  color: darkseagreen;
+	  white-space: pre-wrap;
+	  line-height: 1.2;
+	  word-spacing: 3px;
+	  letter-spacing: 1px;
+  
+  
+	  position: absolute;
+	  top:  10px;
+	  left: 0;
+  }
+  
+  
+  
+  @media only screen and (max-width: 600px) {
+	article{
+			  display: none;
+	}
+  
+	.textbox{
+		display: none;
+	}
+  
+  
+	   .forph{
+		   position: relative;
+	   }
+  
+	.forph img{
+  
+				position: absolute;
+				animation: phmove 6s infinite alternate;
+  
+	}
+  
+  
+  
+  @keyframes phmove{
+	from {
+		 
+		 transform: rotate(0);
+		 left: 0;
+  
+	}
+  
+	to{
+  
+		transform: rotate(10deg);
+		left: 250px;
+	}
+  }
+  
+  
+  
+  }
+  
+  
+  /* Main Home Section end*/
+  
+  
+  
+  
+  
+  /*Main Shop Section Start*/
+  
+  
+  
+  
+  main #shop{
+  
+	  height: 100vh;
+	  background: url(./img/pattern03.png);
+  
+	background-repeat: no-repeat;
+	background-size: cover;
+   
+  
+	padding: 0;
+	margin: 0;
+  }
+  
+  
+  
+  .shop-items{
+  
+		  height: 100vh;
+		  
+  
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+  }
+  
+  .shop-card01 h1, .shop-card02 h1, .shop-card03 h1, .shop-card04 h1{
+  
+		  font-family: monospace;
+		  color: antiquewhite;
+  
+  }
+  
+  
+  
+  
+  .shop-card01, .shop-card02, .shop-card03, .shop-card04{
+  
+	  display: grid;
+	  place-items: center;
+  
+  
+	  width: 230px;
+	  height: 300px;
+	  border-radius: 10px;
+  
+	  padding: 10px;
+	  margin: 30px;
+	  
+	  background-color: darkseagreen;
+	  text-align: center;
+  
+	  box-shadow: 1px 2px 40px 2px grey;
+  }
+  
+  
+  
+  
+  @media only screen and (max-width: 1200px) {
+  
+	  .shop-card01 img, .shop-card02 img, .shop-card03 img, .shop-card04 img{
+  
+		  width: 60px;
+	  }
+	
+  .shop-card01, .shop-card02, .shop-card03, .shop-card04{
+	  width: 100px;
+	  height: 180px;
+	  border-radius: 5px;
+  
+	  padding: 2px;
+	  margin: 6px;
+  
+	  font-size: 12px;
+	  
+	  background-color: darkseagreen;
+	  text-align: center;
+  
+	}
+  
+  
+  }
+  
+  
+  /*Main Shop Section End*/
+  
+  
+  
+  
+  
+  
+  
+  /*Main Arrivals Section Start*/
+  
+  main #arrivals{
+  
+  
+	  height: 100vh;
+	  background: url(./img/pattern05.png);
+  
+	background-repeat: no-repeat;
+	background-size: cover;
+  
+	padding: 0;
+	margin: 0;
+	  
+  }
+  
+  
+  
+  
+  
+  
+  .arrivals-items{
+  
+		  height: 100vh;
+		  
+  
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+  }
+  
+  
+  
+  .new-card05 h1, .new-card06 h1, .new-card07 h1, .new-card08 h1{
+  
+		  font-family: "serif";
+		  color: peachpuff ;
+  }
+  
+  
+  .new-card05, .new-card06, .new-card07, .new-card08{
+  
+	  display: grid;
+	  place-items: center;
+  
+  
+	  width: 230px;
+	  height: 300px;
+	  border-radius: 10px;
+  
+  
+	  padding: 10px;
+	  margin: 30px;
+	  
+	  background-color: yellowgreen;
+	  text-align: center;
+  
+	  box-shadow: 1px 2px 40px 2px grey;
+  }
+  
+  
+  
+  
+  @media only screen and (max-width: 1200px) {
+  
+	  .new-card05 img, .new-card06 img, .new-card07 img, .new-card08 img{
+  
+		  width: 80px;
+	  }
+	
+  .new-card05, .new-card06, .new-card07, .new-card08{
+	  
+	  width: 100px;
+	  height: 180px;
+	  border-radius: 5px;
+  
+	  padding: 2px;
+	  margin: 6px;
+  
+	  font-size: 8px;
+	  
+	  background-color: darkseagreen;
+	  text-align: center;
+  
+  
+  
+  
+	}
+  
+  
+  }
+  
+  
+  /*Main Arrivals Section End*/
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*Main About Section Start*/
+  
+  
+  main #about{
+  
+  
+	  height: 100vh;
+	  background: url(./img/bg02.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+  
+	padding: 0;
+	margin: 0;
+	  
+  }
+  
+  
+  
+  
+  
+  .about-items{
+  
+		  height: 100vh;
+		  
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+  }
+  
+  
+  
+  .about-card h3{
+  
+		  font-family: "serif";
+		  color: ghostwhite ;
+		  text-align: center;
+		  font-size: 50px;
+  
+		  word-spacing: 10px;
+		  letter-spacing: 5px;
+  }
+  
+  
+  .about-card{
+  
+	  margin: 20px;
+	  box-shadow: 1px 2px 40px 2px grey;
+  }
+  
+  
+  
+  
+  
+  @media only screen and (max-width: 1200px) {
+  
+	  .about-card img{
+		  width: 210px;
+	  }
+  
+	  .about-card h3{
+		  font-size: 20px;
+  
+		  word-spacing: 3px;
+		  letter-spacing: 2px;
+	  }
+	
+  .about-card{
+	  border-radius: 5px;
+	  font-size: 8px;
+	  text-align: center;
+	  
+	  }
+  
+  
+  }
+  
+  
+  
+  /*Main About Section End*/
+  
+  
+  
+  
+  /*main section end*/
+  
+  
+  
+  
+  
+  
+  
+  /*footer section start*/
+  
+  
+  footer{
+  
+	  height: 50px;
+  }
+  
+  
+  
+  
+  
+  .footer-box{
+  
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background-color: black;
+	  box-shadow: 0 0 5px grey;
+  
+	  width: 100%;
+	  height: 100px;
+  
+	  /*position: fixed;
+	  bottom: 0;
+	  right: 0;*/
+	  
+  
+  }
+  
+  
+  
+  .textfoot{
+	  color: white;
+	  padding-left: 22px;
+	  font-size: 1.3vw;
+	  cursor: default;
+  }
+  
+  /*footer section end*/
+  
+  
