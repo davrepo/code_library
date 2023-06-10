@@ -1,0 +1,162 @@
+---
+title: "Exercise 6"
+subtitle: "Applied Statistics, IT University of Copenhagen"
+output:
+  pdf_document: default
+documentclass: article
+classoption: a4paper
+references:
+- id: Verzani2014
+  type: book
+  title: "Using R for Introductory Statistics"
+  author:
+  - family: Verzani
+    given: John
+  issued:
+    year: 2014
+  publisher: CRC Press
+---
+
+T = Theoretical Exercise, R = R Exercise
+
+# Preparation
+
+* Read pages 92, 96--99, 102--108, 111--113, 132--139 from @Verzani2014.
+
+# Problems
+
+## 1. Melencolia distribution (T)
+
+Let $X$ and $Y$ be two random variables with the joint probability mass function given in Table 1. What is
+
+(a) $P(X=Y)$?
+
+(b) $P(X+Y=5)$?
+
+(c) $P(1<X \leq 3, 1< Y \leq 3)$?
+
+(d) $P((X,Y) \in \{1,4\} \times \{ 1,4\})$?
+
+```{r, echo=FALSE}
+val <- matrix(c(16,3,2,13,5,10,11,8,9,6,7,12,4,15,14,1)/136,byrow=TRUE,nrow=4)
+rownames(val)<-c("b=1","b=2","b=3","b=4")
+colnames(val)<-c("a=1","a=2","a=3","a=4")
+
+library(knitr)
+
+kable(val, format = "latex", caption = "Probability mass function of the Melencolia distribution.") 
+```
+
+## 2. Joint distribution (T)
+
+Let X and Y be continuous random variables with the joint probability density function
+\begin{equation}
+  f(x,y)=\left\{\begin{tabular}{ll} $cx+1$ & if $x,y\geq0,x+y<1$ \\ 0 & otherwise. \end{tabular}\right.
+\end{equation}
+
+(a) Find the constant c. 
+
+(b) Compute the marginal distribution $f_X(x)$.
+
+(c) Compute $P(Y<2X^2)$.
+
+## 3. Covariance (T)
+
+Again, let $X$ and $Y$ be two random variables with the joint probability mass function given in Table 1. Compute $\mathrm{Cov}(X,Y)$.
+
+## 4. Correlation Coefficient (R)
+
+(a) The data set `normtemp (UsingR)` contains body measurements for 130 healthy, randomly selected individuals. The variable `temperature` measures normal body temperature, and the variable `hr` measures resting heart rate. Make a scatter plot of the two variables. What does the plot show you? Find the Pearson correlation coefficient. How does the estimate relate to the scatter plot?
+```{r}
+library(UsingR)
+data(normtemp)
+plot(normtemp$temperature, normtemp$hr)
+cor(normtemp$temperature, normtemp$hr)
+# plot a linear regression line on plot
+abline(lm(normtemp$hr ~ normtemp$temperature), col="red")
+# annotate the plot with the correlation coefficient
+text(98, 80, paste("r =", round(cor(normtemp$temperature, normtemp$hr), 2)), cex=1.5)
+```
+
+
+(b) The data set `nym.2002 (UsingR)` contains information about the 2002 New York city marathon. What do you expect the correlation between age and finishing time to be? Make a scatter plot and compute the correlation coefficient. Does the result match your expectation? 
+```{r}
+library(UsingR)
+data(nym.2002)
+plot(nym.2002$age, nym.2002$time)
+cor(nym.2002$age, nym.2002$time)
+# plot a linear regression line on plot
+abline(lm(nym.2002$time ~ nym.2002$age), col="red")
+# annotate the plot with the correlation coefficient
+text(20, 3000, paste("r =", round(cor(nym.2002$age, nym.2002$time), 2)), cex=1.5)
+```
+
+(c) The `batting` set (`UsingR`) data set contains baseball statistics for the 2002 Major League Baseball season. What is the correlation between the number of strikeouts (`SO`) and the number of home runs (`HR`)? Make a scatter plot to see whether there is any trend. Does the data suggest that in order to hit a lot of home runs one should strike out a lot?
+```{r}
+library(UsingR)
+data(batting)
+plot(batting$SO, batting$HR)
+cor(batting$SO, batting$HR)
+# plot a linear regression line on plot
+abline(lm(batting$HR ~ batting$SO), col="red")
+# annotate the plot with the correlation coefficient
+text(100, 50, paste("r =", round(cor(batting$SO, batting$HR), 2)), cex=1.5)
+```
+
+## 5. Covariance, Correlatedness and Independence (R)
+
+Load the data set by copying the data file from course webpage to your working directory and typing `load("mypnts.Rdata")`. 
+
+(a) Make a scatter plot of the points. Are the $x$ and $y$ coordinates correlated?
+```{r}
+load("mypnts.Rdata")
+plot(mypnts$x, mypnts$y)
+cor(mypnts$x, mypnts$y)
+# plot a linear regression line on plot
+abline(lm(mypnts$y ~ mypnts$x), col="red")
+# annotate the plot with the correlation coefficient
+text(0, 0, paste("r =", round(cor(mypnts$x, mypnts$y), 2)), cex=1.5)
+```
+
+(b) Construct a 2x2 matrix containing all the pairwise covariances, i.e.
+C = (Cov(X,X), Cov(X,Y), Cov(Y,X), Cov(Y,Y))
+```{r}
+C_matrix <- matrix(c(cov(mypnts$x, mypnts$x), cov(mypnts$x, mypnts$y), cov(mypnts$y, mypnts$x), cov(mypnts$y, mypnts$y)), nrow=2, ncol=2)
+```
+
+(c) Apply the mapping
+x_new = a*x + b*y 
+and
+y_new = c*x + d*y
+to the points, where a=0.07, b=0, c=1, and d=0.42. 
+This process is called whitening. 
+```{r}
+x_new <- 0.07*mypnts$x
+y_new <- 1*mypnts$y + 0.42*mypnts$x
+```
+
+(d) Plot the mapped points (use the option 'asp=1' that gives unity aspect ratio), and their marginal distributions (`densityplot`) on both $x'$ and $y'$ axis. Compute the covariance matrix estimate for the mapped points. Are the mapped points uncorrelated? How about independent? Can you see why the mapping is called whitening?
+```{r}
+plot(x_new, y_new, asp=1)
+densityplot(x_new)
+densityplot(y_new)
+C_matrix_new <- matrix(c(cov(x_new, x_new), cov(x_new, y_new), cov(y_new, x_new), cov(y_new, y_new)), nrow=2, ncol=2)
+```
+
+(e) Apply rotation to the mapped points 
+\begin{equation}
+x'' = cos(\alpha) x' - sin(\alpha) y' \quad \text{and} \quad y''=sin(\alpha) x' +  cos(\alpha)y',
+\end{equation}
+where $\alpha=-\pi/6$.
+
+Plot the rotated, mapped points, and the marginals on the new axes. Are the rotated, mapped coordinates uncorrelated? How about independent? 
+```{r}
+x_new2 <- cos(-pi/6)*x_new - sin(-pi/6)*y_new
+y_new2 <- sin(-pi/6)*x_new + cos(-pi/6)*y_new
+plot(x_new2, y_new2, asp=1)
+densityplot(x_new2)
+densityplot(y_new2)
+C_matrix_new2 <- matrix(c(cov(x_new2, x_new2), cov(x_new2, y_new2), cov(y_new2, x_new2), cov(y_new2, y_new2)), nrow=2, ncol=2)
+```
+
+(f) What did you learn from this exercise?

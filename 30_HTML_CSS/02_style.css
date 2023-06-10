@@ -1,0 +1,109 @@
+h1 {
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    text-decoration: underline red solid 5px;
+}
+
+/* id selector */
+#myId {
+    background-color: #ac0b0b;
+}
+
+/* class selector */
+.myClass {
+    background-color: #FFFFFF;
+}
+
+/* Element with class, is more specific */
+p.myClass {
+    background-color: #FFFFFF;
+}
+
+/* Descendant selector */
+/* select ID blog contained all h1 elements */
+#blog h1 {
+    color: blue;
+}
+
+/* select ID blog contained div contained h1 */
+#blog div h1 {
+    color: blue;
+}
+
+
+
+/* Combination selectors, Descendent selector (space), Child selector (>),  */
+/* Adjacent sibling selector (+), General sibling selector(~) */
+/* select all h1 elements that are direct children of div elements */
+
+/* All descendents of the element */
+/* select all h1 elements that are descendents of div elements */
+div h1 {
+    color: blue;
+}
+/* > is for direct child selector, will not go beyond a single depth level */
+#blog > h1 {
+    color: blue;
+}
+/* + is for adjacent sibling selector, will not go beyond a single depth level */
+<div>
+    <h1></h1>
+    <p>affected</p>
+    <p>affected</p>
+</div>
+
+h1 + p {
+    color: blue;
+}
+/* ~ is for general sibling selector, will go beyond a single depth level */
+h1 ~ p {
+    color: blue;
+}
+ 
+
+/* Attribute selector */
+/* select all anchor elements with attribute "class" */
+a[class] {
+    color: red;
+}
+/* select all anchor with href that contains "meta" */
+a[href*="meta"] {
+    color: red;
+}
+
+
+/* nth-child, nth-type selectors */
+/* select all even elements */
+li:nth-child(even) {
+    background-color: #ac0b0b;
+}
+/* select all odd elements */
+li:nth-of-type(odd) {
+    background-color: #ac0b0b;
+}
+
+
+/* Group selectors */
+/* select all h1 and p elements */
+h1, p {
+    color: red;
+}
+
+
+/* Pseudo-class selectors */
+/* LVHA (Link, Visited, Hover, Active) place them in this order to prevent overwrite */
+/* :hover is for mouse hover */
+a:hover {
+    color: red;
+}
+body:active {
+    color: red;
+}
+/* :focus is for when an element has focus */
+input:focus {
+    color: red;
+}
+
+/* Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-basics-and-terminology */
+/* Flexbox: https://www.coursera.org/learn/html-and-css-in-depth/supplement/srX6c/understanding-flexbox */

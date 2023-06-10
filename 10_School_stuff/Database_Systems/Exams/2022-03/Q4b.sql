@@ -1,0 +1,31 @@
+CREATE TABLE Jojos (
+    JID INT PRIMARY KEY,
+    name VARCHAR NOT NULL
+);
+
+CREATE TABLE Homes (
+    HID INT PRIMARY KEY,
+    state VARCHAR NOT NULL
+);  
+
+CREATE TABLE Loners (
+    LID INT PRIMARY KEY,
+    status VARCHAR NOT NULL
+);
+
+CREATE TABLE Thought (
+    JID INT REFERENCES Jojos(JID),
+    LID INT REFERENCES Loners(LID),
+    lasted INT NOT NULL,
+    PRIMARY KEY (JID)
+);
+
+
+
+CREATE TABLE left_for (
+    JID INT REFERENCES Jojos(JID),
+    HID INT REFERENCES Homes(HID),
+    what VARCHAR NOT NULL,
+    PRIMARY KEY (JID, HID)
+);
+

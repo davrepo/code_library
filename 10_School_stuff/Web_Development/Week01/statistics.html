@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><span id="full_name" style="color: red;"></span>' statistics</h1>
+
+    <h2>Total attempts: <span id="display_attempts"></span></h2>
+    <h2>Total wins: <span id="display_wins"></span></h2>
+    <h2>Total losses: <span id="dispaly_losses"></span></h2>
+
+    <script>
+        let wins = localStorage.getItem('success');
+        let losses = localStorage.getItem('fail');
+        let attempts = localStorage.getItem('attempts');
+
+        let first_name = localStorage.getItem('first_name');
+        let last_name = localStorage.getItem('last_name');
+
+        document.getElementById('full_name').innerHTML = first_name + ' ' + last_name;
+        document.getElementById('display_attempts').innerHTML = attempts;
+        document.getElementById('display_wins').innerHTML = wins;
+        document.getElementById('dispaly_losses').innerHTML = losses;
+    </script>
+</body>
+</html>
