@@ -6,3 +6,9 @@
 03_Machine_learning/Coursera/02_Deep_learning/C4W4_FaceRecog+NeuralStyleTransfer/02_NeuralStyleTransfer/pretrained-model/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5 filter=lfs diff=lfs merge=lfs -text
 03_Machine_learning/Coursera/02_Deep_learning/C5W2_NLP/01_GLoVe_DeBias/data/glove.6B.50d.txt filter=lfs diff=lfs merge=lfs -text
 03_Machine_learning/Coursera/02_Deep_learning/C5W2_NLP/02_TransferLearning_Embedding/data/glove.6B.50d.txt filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C5W3_Seq2Seq/02_SpeechRecogTriggerWord/XY_train/X.npy filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C5W3_Seq2Seq/02_SpeechRecogTriggerWord/XY_dev/X_dev.npy filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C5W4_Transformer/02_PositionalEncoding/glove/glove.6B.100d.txt filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C5W4_Transformer/03_NameEntityRecognition/model/tf_model.h5 filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C5W4_Transformer/04_QuestionAnswering/model/tensorflow/tf_model.h5 filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C5W4_Transformer/04_QuestionAnswering/model/pytorch/pytorch_model.bin filter=lfs diff=lfs merge=lfs -text
