@@ -1,0 +1,31 @@
+[
+  {
+    "title": "UPOS",
+    "type": {
+      "name": "seq",
+      "isWordLevel": true
+    },
+    "output_index": "1",
+    "input_index": "0",
+    "labels": [
+      "PROPN",
+      "PUNCT",
+      "ADJ",
+      "NOUN",
+      "VERB",
+      "DET",
+      "ADP",
+      "AUX",
+      "PRON",
+      "PART",
+      "SCONJ",
+      "NUM",
+      "ADV",
+      "CCONJ",
+      "X",
+      "INTJ",
+      "SYM"
+    ],
+    "id": 0
+  }
+]
