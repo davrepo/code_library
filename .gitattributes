@@ -4,3 +4,5 @@
 03_Machine_learning/Coursera/02_Deep_learning/C4W4_FaceRecog+NeuralStyleTransfer/01_FaceRecognition/keras-facenet-h5/model.h5 filter=lfs diff=lfs merge=lfs -text
 03_Machine_learning/Coursera/02_Deep_learning/C4W4_FaceRecog+NeuralStyleTransfer/02_NeuralStyleTransfer/pretrained-model/imagenet-vgg-verydeep-19.mat filter=lfs diff=lfs merge=lfs -text
 03_Machine_learning/Coursera/02_Deep_learning/C4W4_FaceRecog+NeuralStyleTransfer/02_NeuralStyleTransfer/pretrained-model/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5 filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C5W2_NLP/01_GLoVe_DeBias/data/glove.6B.50d.txt filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C5W2_NLP/02_TransferLearning_Embedding/data/glove.6B.50d.txt filter=lfs diff=lfs merge=lfs -text
