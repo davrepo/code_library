@@ -1,2 +1,4 @@
 03_Machine_learning/Coursera/02_Deep_learning/C4W2_ResNet+TransferLearning/01_ResidualNetworks/resnet50.h5 filter=lfs diff=lfs merge=lfs -text
 03_Machine_learning/Coursera/02_Deep_learning/C4W3_ImageDetect+Segment/01_YOLO_ImgDetection+Localization/model_data/variables/variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C4W4_FaceRecog+NeuralStyleTransfer/01_FaceRecognition/keras-facenet_tf23/variables/variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/02_Deep_learning/C4W4_FaceRecog+NeuralStyleTransfer/01_FaceRecognition/keras-facenet-h5/model.h5 filter=lfs diff=lfs merge=lfs -text
