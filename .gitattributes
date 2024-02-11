@@ -12,3 +12,7 @@
 03_Machine_learning/Coursera/02_Deep_learning/C5W4_Transformer/03_NameEntityRecognition/model/tf_model.h5 filter=lfs diff=lfs merge=lfs -text
 03_Machine_learning/Coursera/02_Deep_learning/C5W4_Transformer/04_QuestionAnswering/model/tensorflow/tf_model.h5 filter=lfs diff=lfs merge=lfs -text
 03_Machine_learning/Coursera/02_Deep_learning/C5W4_Transformer/04_QuestionAnswering/model/pytorch/pytorch_model.bin filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/03_GAN/C2W1_Evaulation/01_FrechetDistance/fid_images_tensor.npz filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/03_GAN/C2W1_Evaulation/01_FrechetDistance/inception_v3_google-1a9a5a14.pth filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/03_GAN/C2W1_Evaulation/01_FrechetDistance/celeba/img_align_celeba.zip filter=lfs diff=lfs merge=lfs -text
+03_Machine_learning/Coursera/03_GAN/C2W1_Evaulation/02_PerceptualPathLength/vgg16-397923af.pth filter=lfs diff=lfs merge=lfs -text
